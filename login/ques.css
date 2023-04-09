@@ -1,0 +1,34 @@
+.upp
+{
+    background-color: azure;
+}
+
+.bk{
+    color: blue;
+    border-radius: 0%;
+    box-sizing: unset;
+    margin: auto;
+    margin-left: 0%;
+}
+.qu{
+    background-color: blue;
+}
+.up{
+    color: blue;
+    font-weight: 10;
+    width: auto;
+    height: 10px;
+
+}
+.btn{
+    background-color:  blue;
+    color:aliceblue;
+    margin: auto;
+    margin-left: 10%;
+}
+.btne{
+    background-color:  blue;
+    color:aliceblue;
+    margin: auto;
+    margin-right: 10%;
+}

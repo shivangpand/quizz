@@ -1,0 +1,42 @@
+h1{
+    font-weight:100;
+    color:blue;
+    text-align: center;
+    margin-top: 250px;
+    text-decoration:underline;
+    text-shadow:  2px 2px #ff0000;
+}
+body{
+    background-color:gray;
+    display: flex;
+    height:100%;
+    width:100%;
+}
+.main{
+    background-image:url("../assets/photo.jpg");
+    height:100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size:cover;
+
+}
+btncontainer{
+    display: flex;
+}
+
+.btn{
+    margin:auto;
+    width: 150px;
+    height:50px;
+    display: block;
+    cursor: pointer;
+    /* background-color: blueviolet; */
+    margin-top: 60px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    
+}
+.btn:hover{
+    background-color: rgb(83, 17, 145);
+}
