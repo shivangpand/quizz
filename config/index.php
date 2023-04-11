@@ -1,4 +1,7 @@
-<?php
+<?php 
+header('Access-Control-Allow-Origin: *');  
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+header("Access-Control-Allow-Headers: Origin, Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
     $server ="localhost";
     $username = "root";
     $password="";
