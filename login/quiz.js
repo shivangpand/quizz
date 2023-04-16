@@ -1,4 +1,5 @@
-
+let quizBackBtn = document.getElementById('quizBackBtn');
+quizBackBtn.onclick = ()=>{location.href = '../welcome/welcome.html'}
 async function getAllData() { 
   const url = 'http://localhost/quizz/config/index.php';
   const options = {
@@ -13,5 +14,5 @@ async function getAllData() {
   const response = await fetch(url, options);
   const data = await response.json();
   console.log('data', data); 
+  return data;
 }
-getAllData(); 

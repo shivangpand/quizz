@@ -1,5 +1,6 @@
 /* Created and coded by Abhilash Narayan */
 /* Quiz source: w3schools.com */
+
 var quiz = {
 "JS": [
 {
@@ -345,19 +346,6 @@ var quiz = {
 "answer": "true",
 "score": 0,
 "status": ""
-},
-{
-"id": 25,
-"question": "Is JavaScript case-sensitive?",
-"options": [
-{
-"a": "No",
-"b": "Yes"
-}
-],
-"answer": "Yes",
-"score": 0,
-"status": ""
 }
 ]
 }
@@ -365,7 +353,7 @@ var quizApp = function () {
 this.score = 0;
 this.qno = 1;
 this.currentque = 0;
-var totalque = quiz.JS.length;
+var totalque = 10;
 this.displayQuiz = function (cque) {
 this.currentque = cque;
 if (this.currentque < totalque) {
@@ -438,12 +426,16 @@ this.displayQuiz(this.currentque);
 var jsq = new quizApp();
 var selectedopt;
 $(document).ready(function () {
+    setQuestions();
+    setTimeout(() => {
 jsq.displayQuiz(0);
 $('#question-options').on('change', 'input[type=radio][name=option]', function (e) {
 //var radio = $(this).find('input:radio');
 $(this).prop("checked", true);
 selectedopt = $(this).val();
 });
+}, 500);
+
 });
 $('#next').click(function (e) {
 e.preventDefault();
@@ -459,3 +451,33 @@ jsq.checkAnswer(selectedopt);
 }
 jsq.changeQuestion(-1);
 });
+async function setQuestions(){
+let data = await getAllData();
+let ques = [];
+data.forEach((elm,index) => {
+    let ans = "";
+    if(elm.answerA == "1") ans = elm.optionA;
+    if(elm.answerB == "1") ans = elm.optionB;
+    if(elm.answerC == "1") ans = elm.optionC;
+    if(elm.answerD == "1") ans = elm.optionD;
+
+    let obj = {
+        "id": index+1,
+        "question": elm.question,
+        "options": [
+        {
+        "a": elm.optionA,
+        "b": elm.optionB,
+        "c": elm.optionC,
+        "d": elm.optionD
+        }
+        ],
+        "answer": ans,
+        "score": 0,
+        "status": ""
+        }
+    ques.push(obj);
+});
+quiz.JS = ques;
+console.log(data[0]);
+}

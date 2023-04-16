@@ -11,9 +11,7 @@ header("Access-Control-Allow-Headers: Origin, Content-Type, Access-Control-Allow
         die("abc error");
         mysqli_connect_error();
     }
-    $category = $_COOKIE['email'];
-    // $query = ''
-    $result = $con-> query("select * from quizquestions where category='$category' limit 10 ");
+    $result = $con-> query("select * from users");
     // $x = $result->fetch_assoc();
     $data1 = array();
     while($row = $result->fetch_assoc()) {

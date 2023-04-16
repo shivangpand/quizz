@@ -22,9 +22,7 @@ function formSubmit(event)
         username:username.value,
         password:password.value,
         confirm_password:confirm_password.value,
-    }
-    let userString = JSON.stringify(user);
-    localStorage.setItem('user', userString);
+    } 
     window.location.href = "login.html";
 
 }
